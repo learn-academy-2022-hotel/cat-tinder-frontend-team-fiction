@@ -1,7 +1,8 @@
 import React from 'react'
 const CharacterEdit = () => {
-  return (<>
-  <p>This is the character index page</p>
+  return (
+    <>
+    <p>This is the character index page</p>
     </>
   )
 }

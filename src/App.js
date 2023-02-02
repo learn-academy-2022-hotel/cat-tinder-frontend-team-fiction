@@ -17,6 +17,7 @@ const App = () => {
   return (
     <>
     <Header />
+    <h1>Welcome Character Tinder</h1>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/characterindex" element={<CharacterIndex />} />

@@ -1,6 +1,7 @@
 import React from 'react'
 const CharacterShow = () => {
-  return (<>
+  return (
+    <>
     <p>This is the Header</p>
     </>
   )
