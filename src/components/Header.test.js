@@ -28,6 +28,7 @@ describe("<Header />", () => {
         expect(logo).toHaveAttribute("src", "SpidermanReading.avif")
         expect(logo).toHaveAttribute("alt", "Character Reading logo")
     })
+    
     it("has clickable links", () => {
         render(
          <BrowserRouter>

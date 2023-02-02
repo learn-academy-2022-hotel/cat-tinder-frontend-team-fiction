@@ -11,8 +11,6 @@ describe("<App />", () => {
         <App />
       </BrowserRouter>
     )
-    const greeting = screen.getByText("Welcome Character Tinder")
-    expect(greeting).toBeInTheDocument
   })
 })
 

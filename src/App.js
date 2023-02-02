@@ -17,15 +17,14 @@ const App = () => {
   return (
     <>
     <Header />
-    <h1>Welcome Character Tinder</h1>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/characterindex" element={<CharacterIndex />} />
-      <Route path="/charactershow" element={<CharacterShow />} />
-      <Route path="/characternew" element={<CharacterNew />} />
-      <Route path="/characteredit" element={<CharacterEdit />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/characterindex" element={<CharacterIndex />} />
+        <Route path="/charactershow" element={<CharacterShow />} />
+        <Route path="/characternew" element={<CharacterNew />} />
+        <Route path="/characteredit" element={<CharacterEdit />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     <Footer />
     </>
   )
