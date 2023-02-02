@@ -1,7 +1,8 @@
 import React from 'react'
 
 const NotFound = () => {
-  return (<>
+  return (
+    <>
     <p>This is the Not Found Page</p>
     </>
   )

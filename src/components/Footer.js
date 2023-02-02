@@ -1,8 +1,11 @@
 import React from 'react'
+
 const Footer = () => {
-  return (<>
-    <p>This is the footer</p>
-    </>
+
+  return (
+    <p>
+      &copy; Presented by Team Fiction
+    </p>
   )
 }
 
