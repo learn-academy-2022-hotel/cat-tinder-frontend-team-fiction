@@ -1,9 +1,22 @@
 import React from 'react'
-const CharacterShow = () => {
+import { useParams } from "react-router-dom"
+
+const CharacterShow = ({ characters }) => {
+  const { id } = useParams()
+  let currentCharacter = characters?.find((character) => character.id === +id)
   return (
-    <>
-    <p>This is the Header</p>
-    </>
+    <main className="character-show-cards">
+    {currentCharacter && (
+      <>
+        <img
+          alt={`profile of a character named ${currentCharacter.name}`}
+          src={currentCharacter.image}
+          className="character-show-img"
+        />
+        // additional character code here
+      </>
+    )}
+    </main>
   )
 }
 
