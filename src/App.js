@@ -14,6 +14,9 @@ import mockCharacters from "./mockCharacters"
 
 const App = () => {
   const [characters, setCharacters] = useState(mockCharacters)
+    const createNewCharacter = (newCharacterObject) => {
+      console.log("newCharacterObject:", newCharacterObject)
+    }
   return (
     <>
     <Header />
@@ -21,7 +24,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/characterindex" element={<CharacterIndex characters={characters}/>} />
         <Route path="/charactershow/:id" element={<CharacterShow characters={characters}/>} />
-        <Route path="/characternew" element={<CharacterNew />} />
+        <Route path="/characternew" element={<CharacterNew createNewCharacter={createNewCharacter}/>} />
         <Route path="/characteredit" element={<CharacterEdit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
