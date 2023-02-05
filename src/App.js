@@ -14,10 +14,14 @@ import mockCharacters from "./mockCharacters"
 
 const App = () => {
   const [characters, setCharacters] = useState(mockCharacters)
-    const createNewCharacter = (newCharacterObject) => {
+  const createNewCharacter = (newCharacterObject) => {
       console.log("newCharacterObject:", newCharacterObject)
-    }
-  return (
+  }
+  const updateCharacter = (character, id) => {
+      console.log("character:", character)
+      console.log("id:", id)
+  }
+    return (
     <>
     <Header />
       <Routes>
@@ -25,7 +29,7 @@ const App = () => {
         <Route path="/characterindex" element={<CharacterIndex characters={characters}/>} />
         <Route path="/charactershow/:id" element={<CharacterShow characters={characters}/>} />
         <Route path="/characternew" element={<CharacterNew createNewCharacter={createNewCharacter}/>} />
-        <Route path="/characteredit" element={<CharacterEdit />} />
+        <Route path="/characteredit/:id" element={<CharacterEdit characters={characters} updateCharacter={updateCharacter} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     <Footer />

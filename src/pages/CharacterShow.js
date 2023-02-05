@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 
 const CharacterShow = ({ characters }) => {
   const { id } = useParams()
@@ -13,7 +13,8 @@ const CharacterShow = ({ characters }) => {
           src={currentCharacter.image}
           className="character-show-img"
         />
-        // additional character code here
+        <NavLink to={`/characteredit/${currentCharacter.id}`} className="nav-link">Edit Character Profile
+        </NavLink>
       </>
     )}
     </main>
