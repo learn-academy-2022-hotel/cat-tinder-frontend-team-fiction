@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import './App.css';
 import Footer from "./components/Footer"
 import Header from "./components/Header"
@@ -9,18 +9,49 @@ import CharacterShow from "./pages/CharacterShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import { Routes, Route } from "react-router-dom"
-import mockCharacters from "./mockCharacters"
+// import mockCharacters from "./mockCharacters"
 
 
 const App = () => {
-  const [characters, setCharacters] = useState(mockCharacters)
-  const createNewCharacter = (newCharacterObject) => {
-      console.log("newCharacterObject:", newCharacterObject)
+  const [characters, setCharacters] = useState([])
+
+  useEffect(() => {readCharacter() }, [])
+
+  const readCharacter = () => {
+    fetch("http://localhost:3000/characters")
+      .then((response) => response.json())
+      .then((payload) => {
+        setCharacters(payload)
+      })
+      .catch(error => console.log(error))
   }
+
+  const createNewCharacter = (character) => {
+    fetch("http://localhost:3000/characters", {
+      body: JSON.stringify(character),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then((response) => response.json())
+      .then((payload) => readCharacter())
+      .catch((errors) => console.log("character create errors:", errors))
+  }
+  
   const updateCharacter = (character, id) => {
-      console.log("character:", character)
-      console.log("id:", id)
+    fetch(`http://localhost:3000/characters/${id}`, {
+      body: JSON.stringify(character),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then((response) => response.json())
+    .then((payload) => readCharacter())
+    .catch((errors) => console.log("Character update errors:", errors))
   }
+
     return (
     <>
     <Header />

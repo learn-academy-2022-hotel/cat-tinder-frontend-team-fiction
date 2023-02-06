@@ -1,11 +1,10 @@
 import React from 'react'
-
 const Footer = () => {
 
   return (
-    <p>
+    <div className="footer-section">
       &copy; Presented by Team Fiction
-    </p>
+    </div>
   )
 }
 

@@ -13,8 +13,12 @@ const CharacterShow = ({ characters }) => {
           src={currentCharacter.image}
           className="character-show-img"
         />
+        <div className="card-text">
+        <h3>Age: {currentCharacter.age}</h3>
+        <p>Enjoys: {currentCharacter.enjoys}</p>
         <NavLink to={`/characteredit/${currentCharacter.id}`} className="nav-link">Edit Character Profile
         </NavLink>
+        </div>
       </>
     )}
     </main>

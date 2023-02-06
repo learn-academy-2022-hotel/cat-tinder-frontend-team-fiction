@@ -1,20 +1,22 @@
 import React from 'react'
 import { Nav, NavItem} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import SpidermanReading from "../assets/SpidermanReading.avif"
+import logo from "../assets/logo.png"
 
 const Header = () => {
   return (
+    <div className="header-page">
     <Nav className="header-nav">
       <NavItem>
         <NavLink to="/">
           <img
-            src={SpidermanReading}
+            src={logo}
             alt="Character Reading logo"
             className="character-logo"
           />
         </NavLink>
       </NavItem>
+      <div className="meet-add">
       <NavItem>
         <NavLink to="/characterindex" className="nav-link">
           Meet the Characters
@@ -25,16 +27,9 @@ const Header = () => {
           Add a New Character
         </NavLink>
       </NavItem>
-      <NavItem>
-        <a
-          target="blank"
-          href="https://www.aspca.org/adopt-pet/adoptable-cats-your-local-shelter"
-          className="nav-link"
-        >
-          Adopt a Character!
-        </a>
-      </NavItem>
+      </div>
     </Nav>
+    </div>
   )
 }
  
