@@ -21,7 +21,7 @@ const CharacterIndex = ({characters}) => {
                 Age: {character.age}
               </CardSubtitle>
               <NavLink to={`/charactershow/${character.id}`} className="nav-link">
-                        See More Details yo 
+                        See More Details 
               </NavLink>
             </CardBody>
           </Card>
